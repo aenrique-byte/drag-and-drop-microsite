@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# Handle Angular and React Router
+RewriteBase /
+
+# Sitemap
+RewriteRule ^sitemap\.xml$ /api/sitemap.xml.php [L]
+
+# Handle API requests - don't rewrite these
+RewriteRule ^api/ - [L]
+
+# Handle static files - don't rewrite these
+RewriteRule ^(assets|images)/ - [L]
+
+# Handle all other routes - send to index.html for React Router
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]

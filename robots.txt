@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /imagemanager/
+
+# Dynamic sitemap - update robots.php for your domain
+Sitemap: https://example.com/api/sitemap.xml
